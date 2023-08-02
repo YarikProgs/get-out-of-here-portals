@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MoveToWorldMixin {
     @Inject(method = "moveToWorld", at = @At("HEAD"), cancellable = true)
     private void moveToWorld(ServerWorld destination, CallbackInfoReturnable<Entity> cir) {
-        if (Portals.CONFIG.main.blockedDimensions.contains(destination.getDimensionKey().getValue())) {
+        if (Portals.CONFIG.main.blockedDimensions.contains(destination.getDimensionKey().getValue().toString())) {
             PlayerEntity me = ((ServerPlayerEntity) (Object) this);
 
             me.sendMessage(Text.literal(Portals.CONFIG.messages.blockedDimension));

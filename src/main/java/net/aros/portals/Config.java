@@ -24,7 +24,7 @@ public class Config {
         public boolean disableEndGateways = false;
         public boolean disableEdenPortals = false;
 
-        public List<Identifier> blockedDimensions = new ArrayList<>();
+        public List<String> blockedDimensions = new ArrayList<>();
         // Насчёт выключения ВСЕХ измерений из списка: нельзя выключать ВСЕ возможные порталы из модов только строкой, максимум, предотвращать
         // Перемещение игрока туда. Если что, блокировать порталы (как вверху) можно по мере добавления модов в сборку, что не так уж и сложно
         // (если он есть на curseforge или на своих maven-хостах)

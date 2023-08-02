@@ -69,8 +69,8 @@ public class PortalsCommand {
     private static int addOrRemoveDimension(CommandContext<ServerCommandSource> context, boolean add) {
         Identifier dimensionId = IdentifierArgumentType.getIdentifier(context, "dimension_id");
 
-        if (add) Portals.CONFIG.main.blockedDimensions.add(dimensionId);
-        else Portals.CONFIG.main.blockedDimensions.remove(dimensionId);
+        if (add) Portals.CONFIG.main.blockedDimensions.add(dimensionId.toString());
+        else Portals.CONFIG.main.blockedDimensions.remove(dimensionId.toString());
 
         Portals.CONFIG.saveConfig(Config.PATH);
 
