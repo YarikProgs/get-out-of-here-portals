@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(AreaHelper.class)
 public class NetherPortalMixin {
     @Inject(method = "createPortal", at = @At("HEAD"), cancellable = true)
-    private void shouldLightPortalAt(CallbackInfo ci) {
+    private void createPortal(CallbackInfo ci) {
         if (Portals.CONFIG.main.disableNetherPortals) {
             MinecraftClient client = MinecraftClient.getInstance();
             if (client != null && client.player != null)

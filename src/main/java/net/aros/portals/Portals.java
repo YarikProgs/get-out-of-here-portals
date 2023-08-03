@@ -7,16 +7,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Portals implements ModInitializer {
-	public static final String MOD_ID = "portals";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static Config CONFIG;
+    public static final String MOD_ID = "portals";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static Config CONFIG;
 
-	@Override
-	public void onInitialize() {
-		CONFIG = Config.loadConfig(Config.PATH);
+    @Override
+    public void onInitialize() {
+        CONFIG = Config.loadConfig(Config.PATH);
 
-		CommandRegistrationCallback.EVENT.register((dispatcher, r, e) -> PortalsCommand.register(dispatcher));
+        CommandRegistrationCallback.EVENT.register((dispatcher, r, e) -> PortalsCommand.register(dispatcher));
 
-		LOGGER.info("Get out of here, portals is initializing!");
-	}
+        LOGGER.info("Get out of here, portals is initializing!");
+    }
 }
